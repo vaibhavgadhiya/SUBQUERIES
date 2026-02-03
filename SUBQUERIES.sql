@@ -89,7 +89,7 @@ select distinct e.emp_id, e.name, e.department_id, s.sale_amount
 from employee as e
 join sales as s ON e.emp_id = s.emp_id;
 
---Find the employee with the highest sale amount.
+--4.Find the employee with the highest sale amount.
 
 select distinct e.emp_id, e.name, s.sale_amount
 from employee as e
@@ -137,7 +137,7 @@ select sum(s.sale_amount) as total_sales from sales as s
 join employee as e on s.emp_id = e.emp_id
 where e.salary > (select avg(salary) from employee);
 
---Advanced Level 1. Find employees who have not made any sales
+--Advanced Level 1.Find employees who have not made any sales
 
 select e.emp_id, e.name from employee as e
 left join sales as s on e.emp_id = s.emp_id
